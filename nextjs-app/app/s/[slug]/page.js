@@ -120,10 +120,33 @@ export default async function SummaryPage({ params }) {
 
   if (!summary) {
     return (
-      <div style={{ padding: '40px', textAlign: 'center', fontFamily: 'sans-serif' }}>
-        <h1>404 - Nie znaleziono</h1>
-        <p>Przykro nam, ale nie mamy jeszcze tego streszczenia.</p>
-        <a href="/" style={{ color: 'blue' }}>Wróć na stronę główną</a>
+      <div style={{ padding: '60px 20px', textAlign: 'center', fontFamily: 'sans-serif', maxWidth: '600px', margin: '0 auto' }}>
+        <h1 style={{ marginBottom: '20px', fontSize: '2rem' }}>Nie znaleziono streszczenia</h1>
+        <p style={{ fontSize: '1.2rem', marginBottom: '40px', lineHeight: '1.6', color: '#444' }}>
+          Jeszcze nie wygenerowaliśmy streszczenia dla tej książki, ale możesz to zrobić w naszej aplikacji w kilka sekund!
+        </p>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center' }}>
+          <a href="https://app.strescto.pl" 
+             style={{ 
+               backgroundColor: '#000', 
+               color: '#fff', 
+               padding: '16px 32px', 
+               borderRadius: '12px', 
+               textDecoration: 'none',
+               fontWeight: 'bold',
+               fontSize: '18px',
+               boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+             }}>
+             Otwórz aplikację Streść.to
+          </a>
+          
+          <p style={{ color: '#666', fontSize: '14px', maxWidth: '400px' }}>
+            Aplikacja automatycznie wygeneruje plan wydarzeń, charakterystykę postaci i analizę.
+          </p>
+          
+          <a href="/" style={{ color: '#0070f3', marginTop: '20px', textDecoration: 'none' }}>&larr; Wróć na stronę główną</a>
+        </div>
       </div>
     )
   }
