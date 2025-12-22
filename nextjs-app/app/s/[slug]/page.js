@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import SummaryClient from './SummaryClient'
+import { Sparkles, Users, Activity, BookOpen, Lightbulb, HelpCircle, ArrowLeft } from 'lucide-react'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -231,7 +232,7 @@ export default async function SummaryPage({ params }) {
           fontWeight: '600',
           marginBottom: '32px'
         }}>
-          <span style={{ marginRight: '8px' }}>&larr;</span> Wróć
+          <ArrowLeft size={16} style={{ marginRight: '8px' }} /> Wróć
         </a>
 
         {/* Title & User */}
@@ -267,16 +268,18 @@ export default async function SummaryPage({ params }) {
                  alignItems: 'center',
                  justifyContent: 'space-between'
                }}>
-                 <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>✨ Streszczenie</span>
+                 <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                   <Sparkles size={18} /> Streszczenie
+                 </span>
                  <span style={{ width: '8px', height: '8px', backgroundColor: '#E05D44', borderRadius: '50%' }}></span>
                </div>
                
                <a href={`https://app.strescto.pl/book/${summary.fullContentId}`} style={{ padding: '10px 16px', color: '#5D5D5D', textDecoration: 'none', fontSize: '14px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                 👥 Postacie
+                 <Users size={18} /> Postacie
                </a>
                
                <a href={`https://app.strescto.pl/book/${summary.fullContentId}`} style={{ padding: '10px 16px', color: '#5D5D5D', textDecoration: 'none', fontSize: '14px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                 📈 Plan Wydarzeń
+                 <Activity size={18} /> Plan Wydarzeń
                </a>
             </div>
           </div>
@@ -286,11 +289,15 @@ export default async function SummaryPage({ params }) {
              <div style={{ fontSize: '11px', textTransform: 'uppercase', color: '#999', letterSpacing: '1px', marginBottom: '12px', fontWeight: 'bold' }}>Analiza</div>
              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <a href={`https://app.strescto.pl/book/${summary.fullContentId}`} style={{ padding: '10px 16px', color: '#5D5D5D', textDecoration: 'none', fontSize: '14px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span>💡 Motywy i Wątki</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Lightbulb size={18} /> Motywy i Wątki
+                  </span>
                   <span style={{ fontSize: '12px' }}>⭐</span>
                 </a>
                 <a href={`https://app.strescto.pl/book/${summary.fullContentId}`} style={{ padding: '10px 16px', color: '#5D5D5D', textDecoration: 'none', fontSize: '14px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span>📖 Analiza Literacka</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <BookOpen size={18} /> Analiza Literacka
+                  </span>
                   <span style={{ fontSize: '12px' }}>⭐</span>
                 </a>
              </div>
@@ -301,7 +308,7 @@ export default async function SummaryPage({ params }) {
              <div style={{ fontSize: '11px', textTransform: 'uppercase', color: '#999', letterSpacing: '1px', marginBottom: '12px', fontWeight: 'bold' }}>extras</div>
              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <a href={`https://app.strescto.pl/book/${summary.fullContentId}`} style={{ padding: '10px 16px', color: '#5D5D5D', textDecoration: 'none', fontSize: '14px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  ❓ Quizy
+                  <HelpCircle size={18} /> Quizy
                 </a>
              </div>
           </div>
@@ -312,11 +319,11 @@ export default async function SummaryPage({ params }) {
         <div style={{ marginTop: 'auto', paddingTop: '20px' }}>
            <div style={{ fontSize: '10px', textTransform: 'uppercase', color: '#999', letterSpacing: '1px', marginBottom: '12px', fontWeight: 'bold' }}>REKOMENDOWANE ANALIZY</div>
            <a href={`https://app.strescto.pl/book/${summary.fullContentId}`} style={{ textDecoration: 'none', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-              <span style={{ color: '#E05D44', fontSize: '16px', marginTop: '2px' }}>✨</span>
+              <span style={{ color: '#E05D44', marginTop: '2px' }}><Sparkles size={16} /></span>
               <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#232323', lineHeight: '1.4' }}>
                 Konflikt romantyzmu i pozytywizmu w światopoglądzie Stanisława Wokulskiego
               </span>
-              <span style={{ color: '#E05D44', fontSize: '16px' }}>⊕</span>
+              <span style={{ color: '#E05D44' }}>⊕</span>
            </a>
         </div>
       </aside>
