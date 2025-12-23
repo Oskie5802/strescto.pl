@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js'
-import SummaryClient from './SummaryClient'
 import { Sparkles, Users, Activity, BookOpen, Lightbulb, HelpCircle, ArrowLeft } from 'lucide-react'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -124,14 +123,14 @@ export async function generateMetadata({ params }) {
   if (!summary) return { title: 'Nie znaleziono - Strescto' }
   
   return {
-    title: `${summary.title} - Streszczenie, Plan Wydarzeń, Analiza | Strescto`,
-    description: `Pełne streszczenie i opracowanie lektury ${summary.title}. ${summary.author}. Plan wydarzeń, charakterystyka bohaterów, motywy literackie.`,
+    title: `Streszczenie ${summary.title} - Strescto`,
+    description: `Pełne streszczenie lektury ${summary.title}. ${summary.author}. Plan wydarzeń, charakterystyka bohaterów i motywy literackie. Sprawdź teraz.`,
     alternates: {
       canonical: `https://app.strescto.pl/s/${slug}`,
     },
     openGraph: {
-      title: `${summary.title} - Streszczenie`,
-      description: `Przygotuj się do sprawdzianu z lektury ${summary.title}.`,
+      title: `Streszczenie ${summary.title}`,
+      description: `Przygotuj się do sprawdzianu z lektury ${summary.title}. Kompletne opracowanie.`,
       url: `https://app.strescto.pl/s/${slug}`,
       siteName: 'Strescto',
       type: 'article',
