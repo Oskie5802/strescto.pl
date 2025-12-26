@@ -26,7 +26,10 @@ export default function Home() {
         "mockup.main": "Główni",
         "feat3.title": "Interaktywne <br>Quizy i Testy",
         "feat3.desc": "Sprawdź swoją wiedzę po każdej lekturze. Nasze quizy pomagają utrwalić najważniejsze fakty i motywy, przygotowując Cię do sprawdzianów i matury w mgnieniu oka.",
+        "feat4.title": "Perfekcyjna <br>Rozprawka",
+        "feat4.desc": "Generuj gotowe argumenty, tezy i konteksty do Twojej rozprawki. Zrozum, jak wykorzystać lekturę w tematach maturalnych.",
         "mockup.quizzes": "Quizy",
+        "mockup.essay": "Rozprawka",
         "footer.title": "Gotowy na czystą wiedzę?",
         "btn.download": "Pobierz Aplikację"
       },
@@ -49,7 +52,10 @@ export default function Home() {
         "mockup.main": "Main",
         "feat3.title": "Interactive <br>Quizzes & Tests",
         "feat3.desc": "Test your knowledge after every reading. Our quizzes help you memorize key facts and themes, preparing you for exams and finals in no time.",
+        "feat4.title": "Perfect <br>Essay",
+        "feat4.desc": "Generate ready-made arguments, thesis statements, and contexts for your essay. Understand how to use the book in exam topics.",
         "mockup.quizzes": "Quizzes",
+        "mockup.essay": "Essay",
         "footer.title": "Ready for pure knowledge?",
         "btn.download": "Download App"
       }
@@ -425,6 +431,14 @@ export default function Home() {
         .quiz-option.correct .quiz-check { background: var(--forest-green); border-color: var(--forest-green); }
         .quiz-text { height: 8px; width: 60%; background: #ccc; border-radius: 4px; }
 
+        /* Essay UI */
+        .essay-ui { display: flex; flex-direction: column; gap: 16px; }
+        .essay-block { background: var(--paper); border-radius: 8px; border: 1px solid var(--border); padding: 12px; }
+        .essay-label { width: 60px; height: 8px; background: var(--ink); border-radius: 4px; margin-bottom: 8px; opacity: 0.8; }
+        .essay-line { height: 6px; background: #ddd; border-radius: 3px; margin-bottom: 6px; }
+        .essay-line.short { width: 70%; }
+        .essay-badge { width: 80px; height: 16px; background: var(--accent); border-radius: 12px; margin-bottom: 12px; opacity: 0.1; }
+
         .reveal-on-scroll { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
         .reveal-on-scroll.visible { opacity: 1; transform: translateY(0); }
         .screen-container:hover .app-screen { transform: translateY(-10px) rotateX(5deg); }
@@ -648,6 +662,43 @@ export default function Home() {
                         <div className="quiz-option" style={{padding: '12px'}}>
                             <div className="quiz-check"></div>
                             <div className="quiz-text" style={{width: '60%', height: '8px'}}></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section className="container feature-section reversed reveal-on-scroll">
+        <div className="feature-text">
+            <h2 data-i18n="feat4.title">Perfekcyjna <br/>Rozprawka</h2>
+            <p data-i18n="feat4.desc">Generuj gotowe argumenty, tezy i konteksty do Twojej rozprawki. Zrozum, jak wykorzystać lekturę w tematach maturalnych.</p>
+        </div>
+        <div className="feature-visual">
+            <div className="web-screen-mockup" style={{transform: 'rotateY(-10deg) rotateX(5deg)'}}>
+                <div className="web-header">
+                    <div className="web-dot"></div><div className="web-dot"></div><div className="web-dot"></div>
+                    <div style={{fontSize: '8px', color: '#999', marginLeft: 'auto'}} data-i18n="mockup.essay">Rozprawka</div>
+                </div>
+                <div className="web-content">
+                    <div className="essay-ui">
+                        <div style={{display: 'flex', gap: '8px', marginBottom: '12px'}}>
+                            <div style={{padding: '4px 8px', borderRadius: '12px', border: '1px solid var(--ink)', fontSize: '8px'}}>Tezy</div>
+                            <div style={{padding: '4px 8px', borderRadius: '12px', background: 'var(--ink)', color: '#fff', fontSize: '8px'}}>Argumenty</div>
+                            <div style={{padding: '4px 8px', borderRadius: '12px', border: '1px solid var(--ink)', fontSize: '8px'}}>Kontekst</div>
+                        </div>
+                        <div className="essay-block">
+                            <div className="essay-label" style={{width: '40px', background: 'var(--forest-green)'}}></div>
+                            <div className="essay-line" style={{height: '8px', width: '90%', marginBottom: '12px'}}></div>
+                            <div className="essay-line"></div>
+                            <div className="essay-line"></div>
+                            <div className="essay-line short"></div>
+                        </div>
+                        <div className="essay-block">
+                            <div className="essay-label" style={{width: '60px', background: 'var(--burnt-orange)'}}></div>
+                            <div className="essay-line" style={{height: '8px', width: '80%', marginBottom: '12px'}}></div>
+                            <div className="essay-line"></div>
+                            <div className="essay-line short"></div>
                         </div>
                     </div>
                 </div>
